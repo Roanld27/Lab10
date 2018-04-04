@@ -15,13 +15,19 @@ import javax.swing.JFrame;
 
 public class Sorting {
 
-    /** Increment to sweep the sort. */
+    /**
+     * Increment to sweep the sort.
+     */
     private static final int SORT_INCREMENT = 10000;
 
-    /** Total number of values to try. */
+    /**
+     * Total number of values to try.
+     */
     private static final int TOTAL_SORT_VALUES = 100;
 
-    /** Total data size. */
+    /**
+     * Total data size.
+     */
     private static final int TOTAL_INTEGER_VALUES = 1000000;
 
     /**
@@ -32,7 +38,16 @@ public class Sorting {
      */
     @SuppressWarnings("unused")
     private static int[] bubbleSort(final int[] array) {
-        return null;
+        for (int i = 0; i < array.length - 2; i++) {
+            for (int j = 1; j < array.length; j++) {
+                if (array[j] < array[j - 1]) {
+                    int temp = array[j];
+                    array[j] = array[j - 1];
+                    array[j - 1] = temp;
+                }
+            }
+        }
+        return array;
     }
 
     /**
